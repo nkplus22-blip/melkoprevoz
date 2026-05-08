@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melko Prevoz | 10 Godina Tradicije</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap');
+        body { font-family: 'Montserrat', sans-serif; background-color: #0d0d0d; color: white; }
+        .gold-accent { color: #eab308; }
+        .gold-bg { background-color: #eab308; }
+        .input-field { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(234, 179, 8, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            width: 100%;
+            color: white;
+            outline: none;
+        }
+        .input-field:focus { border-color: #eab308; }
+        .hero-bg {
+            background: linear-gradient(to bottom, rgba(13,13,13,0.8), #0d0d0d), url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="py-6 flex justify-center border-b border-white/5 bg-black/50 sticky top-0 z-50 backdrop-blur-md">
+        <img src="melkoprevoz.PNG" alt="Melko Prevoz Logo" class="h-16 md:h-20 drop-shadow-[0_0_10px_rgba(234,179,8,0.5)]">
+    </nav>
+
+    <section class="hero-bg py-20 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <span class="gold-bg text-black px-4 py-1 rounded-full text-sm font-bold uppercase tracking-widest">Premium Usluga</span>
+            <h1 class="text-4xl md:text-6xl font-black mt-6 mb-4 italic uppercase">Više od <span class="gold-accent">10 godina</span> sa Vama na putu!</h1>
+            <p class="text-gray-300 text-lg md:text-xl leading-relaxed mb-10">
+                Putovanja nisu samo kilometri, već povjerenje koje gradimo deceniju. Vaše želje su naša misija – bilo da je u pitanju prevoz putnika ili dostava pošiljki, stižemo <span class="gold-accent font-bold">sigurno, brzo i pouzdano</span> od vrata do vrata. BiH - Njemačka, Vaša sigurnost je naša najveća odgovornost.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-12 px-4">
+        <div class="max-w-2xl mx-auto bg-[#1a1a1a] p-8 rounded-2xl border border-white/10 shadow-2xl">
+            <h2 class="text-2xl font-bold mb-8 text-center uppercase tracking-wider">Pošaljite Brzi <span class="gold-accent">Upit</span></h2>
+            
+            <div class="space-y-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Ime i Prezime</label>
+                    <input type="text" id="ime" class="input-field" placeholder="Vaše ime...">
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Država</label>
+                        <input type="text" id="drzava" class="input-field" placeholder="npr. BiH ili Njemačka">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Polazni Grad</label>
+                        <input type="text" id="grad_iz" class="input-field" placeholder="Odakle krećete?">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Odredišni Grad</label>
+                    <input type="text" id="grad_u" class="input-field" placeholder="Gdje putujete?">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-gray-500 mb-2">Opis (Broj stvari, specifični zahtjevi...)</label>
+                    <textarea id="opis" rows="4" class="input-field" placeholder="Napišite koliko torbi imate ili šta želite poslati..."></textarea>
+                </div>
+
+                <button onclick="posaljiUpit()" class="w-full gold-bg text-black font-black py-4 rounded-lg uppercase tracking-widest hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i> Pošalji Upit na WhatsApp
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+        <a href="viber://chat?number=%2B38762790790" class="bg-purple-600 w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:rotate-12 transition-transform">
+            <i class="fab fa-viber"></i>
+        </a>
+        <a href="https://wa.me/38762790790" class="bg-green-600 w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:rotate-12 transition-transform">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <footer class="py-12 bg-black text-center border-t border-white/5">
+        <p class="text-gray-500 text-sm italic">Melko Prevoz - Sigurnost na prvom mjestu</p>
+        <p class="gold-accent font-bold mt-2">+387 62 790 790</p>
+    </footer>
+
+    <script>
+        function posaljiUpit() {
+            const ime = document.getElementById('ime').value;
+            const drzava = document.getElementById('drzava').value;
+            const grad_iz = document.getElementById('grad_iz').value;
+            const grad_u = document.getElementById('grad_u').value;
+            const opis = document.getElementById('opis').value;
+
+            const poruka = `Zdravo Melko Prevoz!%0A%0AStiže novi upit sa web stranice:%0A*Ime:* ${ime}%0A*Država:* ${drzava}%0A*Relacija:* ${grad_iz} -> ${grad_u}%0A*Opis:* ${opis}`;
+            
+            window.open(`https://wa.me/38762790790?text=${poruka}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>
